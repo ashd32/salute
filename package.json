@@ -1,0 +1,19 @@
+{
+  "name": "salute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashd32/salute.git"
+  },
+  "author": "ashley donald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashd32/salute/issues"
+  },
+  "homepage": "https://github.com/ashd32/salute#readme"
+}
