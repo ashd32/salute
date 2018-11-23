@@ -10,4 +10,11 @@ module.exports = function (app) {
   kudos.delete('id');
   kudos.update('id');
 
+  const users = new RestfulAPI('users', app, models.Users);
+  users.findAll();
+  users.find('id');
+  users.create();
+  users.delete('id');
+  users.update('id');
+
 };
