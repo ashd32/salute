@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/ashd32/salute/issues"
   },
-  "homepage": "https://github.com/ashd32/salute#readme"
+  "homepage": "https://github.com/ashd32/salute#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
+    "path": "^0.12.7",
+    "sequelize": "^4.41.2"
+  }
 }
