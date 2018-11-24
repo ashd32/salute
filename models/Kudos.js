@@ -1,10 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
     const Kudos = sequelize.define("Kudos", {
-        name: DataTypes.STRING,
-        showAddress: DataTypes.BOOLEAN,
-        Kudosname: DataTypes.STRING,
-        password: DataTypes.STRING
+        objectID: DataTypes.INTEGER,
+        KudosText: DataTypes.STRING
     });
+    Kudos.associate=function(models){
+        Kudos.belongsTo(models.Users, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return Kudos;
 };
-
