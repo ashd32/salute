@@ -15,11 +15,12 @@ $(function() {
     $.get("/api/kudos").then(function(kudos) {
       console.log(kudos);
       for (let i = 0; i < kudos.length; i++) {
+          
         $(".kudos").append(
-          "<option value=" + kudos[i]._id + ">" + kudos[i].title + "</option>"
+          "Title: <option value=" + kudos[i]._id + ">" + kudos[i].title + "</option>"
         );
         $(".kudos").append(
-          "<option value=" + kudos[i]._id + ">" + kudos[i].message + "</option>"
+          "Message: <option value=" + kudos[i]._id + ">" + kudos[i].message + "</option>"
         );
       }
     });
@@ -28,8 +29,6 @@ $(function() {
     const renderKudos = function() {
       $.get("/api/kudos").then(function(kudosData) {
         kudosData.forEach(kudos => {
-          //Rendering the Kudos title and message
-          render(kudos);
         });
       });
     };
