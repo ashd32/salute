@@ -11,8 +11,8 @@ $(function () {
     $.get("/api/kudos").then(function(kudos){
         console.log(kudos);
         for (let i=0; i<kudos.length; i++){
-            $('.kudo-from').append('<option value='+kudos[i]._id+'>'+kudos[i].title+'</option>');
-            $('.kudo-to').append('<option value='+kudos[i]._id+'>'+kudos[i].message+'</option>');
+            $('.kudos').append('<option value='+kudos[i]._id+'>'+kudos[i].title+'</option>');
+            $('.kudos').append('<option value='+kudos[i]._id+'>'+kudos[i].message+'</option>');
         }
     });
     
@@ -48,12 +48,7 @@ const render = function (kudos) {
                     .catch(function (error) {
                         console.log(error);
                     });
-
-
             });
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
 };
 
 //Render the kudos on the index.html
@@ -68,11 +63,7 @@ const renderKudos = function () {
                 render(kudo);
 
             });
-
         });
-        // .catch(function (error) {
-        //     console.log(error);
-        // })
 };
 
 //Send Kudos to the server.
@@ -116,10 +107,7 @@ const sendKudo = function () {
             .then(function (response) {
                 console.log(response);
             });
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
-
+          
         $("#kudoModal").removeClass("show");
         location.reload();
     }
