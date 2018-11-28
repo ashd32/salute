@@ -1,35 +1,3 @@
-// const router = require("express").Router();
-// const db = require("../models");
-//   router.get("/api/kudos",function(req,res){
-//   db.Kudos.find(function(err,kudos){
-//       res.json(kudos);
-//   });
-// });
-// router.post("/api/users", function(req,res){
-//   db.User.create(req.body).then(function(newUser){
-//     res.json({
-//       message:"userCreated"
-//     });
-//   });
-// });
-// router.post("/api/kudos", function(req,res){
-//   db.Kudos.create(req.body).then(function(newKudo){
-//     res.json({
-//       message:"kudoCreated"
-//     });
-//   });
-// });
-// router.get("/api/users", function(req,res){
-//   db.User.find().then(function(users){
-//     res.json(users);
-//   });
-// });
-// module.exports = router;
-
-
-
-
-
 const router = require('express').Router();
 const db = require('../models');
 router.get('/api/kudos', function(req, res) {
@@ -61,6 +29,17 @@ router.post('/api/kudos', function(req, res) {
     });
   });
 });
+
+
+// Delete route for Kudos
+router.get('/api/kudos', function deleteData(item, url) {
+  return fetch(url + '/' + item, {
+    method: 'delete'
+  })
+  .then(response => response.json());
+});
+ 
+
 router.get('/api/users', function(req, res) {
   db.User.find().then(function(users) {
     res.json(users);
